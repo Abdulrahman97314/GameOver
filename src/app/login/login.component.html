@@ -1,0 +1,40 @@
+<section class="py-lg-5 px-lg-3">
+    <div class="container">
+    <div class="row g-0 shadow-lg">
+        <div class="col-lg-6">
+            <div class="bg-img h-100 w-100 d-none d-lg-block">
+            </div>
+        </div>
+        <div class="col-lg-6 p-5 bg text-center">
+            <form [formGroup]='loginForm'>
+                <div>
+                    <img height="70" src="assets/imgs/logo.png" alt="">
+                </div>
+                <h1 class="mb-4 text-center">Log in to GameOver</h1>
+            <div class="mb-3">
+                <input formControlName='email' class="form-control" type="email" placeholder="Email Address">
+                <div>
+                    <p class="alert alert-dark p-1 text-center" *ngIf="errorMsg=='email doesn\'t exist'">Email doesn't exist</p>
+            </div>
+            </div>
+            <div class="mb-3">
+                <input formControlName='password' class="form-control" type="password" placeholder="Password">
+                <div>
+                    <p class="alert alert-dark p-1 text-center" *ngIf="errorMsg=='incorrect password'">incorrect password</p>
+            </div>
+            </div>
+            <button (click)="sendData()" type="submit" class="w-100 p-2 rounded">
+                <span *ngIf="loading==false">Login</span>
+                <span *ngIf="loading==true"><i class="fa fa-spinner fa-spin"></i></span>
+            </button>
+            </form>
+            <hr>
+            <div><a class="noHover clicker" (click)="forgetPassword()">Forget Password?</a></div>
+            <div class="text-center">
+                <span class="small">Not a member yet? </span>
+                <a routerLink="/register" class="noHover">Create Account<i class="fas fa-chevron-right small"></i></a>
+            </div>
+        </div>
+    </div>
+    </div>
+</section>

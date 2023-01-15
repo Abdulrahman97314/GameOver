@@ -1,0 +1,62 @@
+<nav class="navbar navbar-expand-lg bg-dark navbar-dark shadow-sm fixed-top">
+    <div class="container ">
+      <a class="navbar-brand" routerLink="home">
+        <img width="70" src="assets/imgs/logo.png" alt="">Game Over</a>
+      <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+        <span class="navbar-toggler-icon"></span>
+      </button>
+      <div class="collapse navbar-collapse" id="navbarSupportedContent">
+        <ul class="navbar-nav me-auto mb-2 mb-lg-0 ms-4">
+          <li class="nav-item" data-toggle="collapse" data-target="navbar-collapse show">
+            <a data-bs-toggle="collapse" data-bs-target=".navbar-collapse.show" *ngIf="userIslogged==true" class="nav-link" routerLink="home" routerLinkActive="active">Home</a>
+          </li>
+          <li class="nav-item" >
+            <a data-bs-toggle="collapse" data-bs-target=".navbar-collapse.show" *ngIf="userIslogged==true" class="nav-link" routerLink="games/all" routerLinkActive="active">All</a>
+          </li>
+          <li class="nav-item dropdown">
+            <a  *ngIf="userIslogged==true" class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">Platforms</a>
+            <ul class="dropdown-menu">
+              <li><a data-bs-toggle="collapse" data-bs-target=".navbar-collapse.show" class="dropdown-item" routerLink="/games/platforms/pc" >PC</a></li>
+              <li><a data-bs-toggle="collapse" data-bs-target=".navbar-collapse.show" class="dropdown-item" routerLink="/games/platforms/browser">Browser</a></li>
+            </ul>
+          </li>
+          <li class="nav-item dropdown">
+            <a *ngIf="userIslogged==true" class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">Sort-by</a>
+            <ul class="dropdown-menu">
+              <li><a data-bs-toggle="collapse" data-bs-target=".navbar-collapse.show" class="dropdown-item" routerLink="/games/sort-by/release-date">Release-date</a></li>
+              <li><a data-bs-toggle="collapse" data-bs-target=".navbar-collapse.show" class="dropdown-item" routerLink="/games/sort-by/popularity">Popularity</a></li>
+              <li><a data-bs-toggle="collapse" data-bs-target=".navbar-collapse.show" class="dropdown-item" routerLink="/games/sort-by/alphabetical">Alphabetical</a></li>
+              <li><a data-bs-toggle="collapse" data-bs-target=".navbar-collapse.show" class="dropdown-item" routerLink="/games/sort-by/relevance">Relevance</a></li>
+            </ul>
+          </li>
+          <li class="nav-item dropdown">
+            <a  *ngIf="userIslogged==true" class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">Categories</a>
+            <ul class="dropdown-menu">
+              <li><a data-bs-toggle="collapse" data-bs-target=".navbar-collapse.show" class="dropdown-item" routerLink="/games/Categories/racing">Racing</a></li>
+              <li><a data-bs-toggle="collapse" data-bs-target=".navbar-collapse.show" class="dropdown-item" routerLink="/games/Categories/sports">Sports</a></li>
+              <li><a data-bs-toggle="collapse" data-bs-target=".navbar-collapse.show" class="dropdown-item" routerLink="/games/Categories/social">Social</a></li>
+              <li><a data-bs-toggle="collapse" data-bs-target=".navbar-collapse.show" class="dropdown-item" routerLink="/games/Categories/shooter">Shooter</a></li>
+              <li><a data-bs-toggle="collapse" data-bs-target=".navbar-collapse.show" class="dropdown-item" routerLink="/games/Categories/open-world">Open-world</a></li>
+              <li><a data-bs-toggle="collapse" data-bs-target=".navbar-collapse.show" class="dropdown-item" routerLink="/games/Categories/zombie">Zombie</a></li>
+              <li><a data-bs-toggle="collapse" data-bs-target=".navbar-collapse.show" class="dropdown-item" routerLink="/games/Categories/fantasy">Fantasy</a></li>
+              <li><a data-bs-toggle="collapse" data-bs-target=".navbar-collapse.show" class="dropdown-item" routerLink="/games/Categories/action-rpg">Action-RBG</a></li>
+              <li><a data-bs-toggle="collapse" data-bs-target=".navbar-collapse.show" class="dropdown-item" routerLink="/games/Categories/action">Action</a></li>
+              <li><a data-bs-toggle="collapse" data-bs-target=".navbar-collapse.show" class="dropdown-item" routerLink="/games/Categories/flight">Flight</a></li>
+              <li><a data-bs-toggle="collapse" data-bs-target=".navbar-collapse.show" class="dropdown-item" routerLink="/games/Categories/battle-royale">Battle-Royale</a></li>
+            </ul>
+          </li>
+        </ul>
+        <ul class="navbar-nav ms-auto mb-2 mb-lg-0 ms-4">
+            <li class="nav-item">
+              <a data-bs-toggle="collapse" data-bs-target=".navbar-collapse.show" *ngIf="userIslogged==false" class="nav-link mx-2" routerLink="login">Login</a>
+            </li>
+            <li class="nav-item">
+              <a data-bs-toggle="collapse" data-bs-target=".navbar-collapse.show" *ngIf="userIslogged==false" class="nav-link register-logout mx-2" routerLink="register">Join Free</a>
+            </li>
+            <li class="nav-item ps-4">
+                <a data-bs-toggle="collapse" data-bs-target=".navbar-collapse.show" *ngIf="userIslogged==true" class="nav-link register-logout m-2 " (click)="logout()">Log Out</a>
+              </li>
+          </ul>
+      </div>
+    </div>
+  </nav>

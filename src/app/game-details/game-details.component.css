@@ -1,0 +1,12 @@
+.btn-blue{
+    color: #fff;
+    background-color: #4799eb;
+    border-color: #4799eb;
+}
+.btn-free{
+    background-color: #32383e;
+    cursor: pointer;
+}
+ul{
+    list-style-type: none;
+}

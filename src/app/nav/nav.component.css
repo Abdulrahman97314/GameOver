@@ -1,0 +1,13 @@
+.navbar {
+    background-color: #272b30 !important;
+    border-bottom: 1px solid rgba(28, 28, 28, .6);
+}
+.register-logout{
+    color: #4799eb;
+    border: 1px solid #4799eb;
+    border-radius: .375rem;
+    padding: .375rem .75rem !important;
+    font-size: 1rem;
+    width: fit-content;
+    cursor: pointer;
+}

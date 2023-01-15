@@ -1,0 +1,26 @@
+<section>
+<div class="BG text-center ">
+    <div class="py-1">
+    <h1>Find & track the best <span class="blue">free-to-play </span> games!</h1>
+    <p class="text-muted font">Track what you've played and search for what to play next! Plus get free premium loot!</p>
+    <a routerLink="/games/all" class="text-muted btn btn-Browse">Browse Games</a></div>
+</div>
+<div class="container my-5">
+    <div>
+    <h3 class="my-5">
+        <i class="fas fa-robot mr-2"></i>Personalized Recommendations
+    </h3>
+</div>
+<div class="row g-4">
+    <div *ngFor="let game of top3PopGames" class="col-md-4" [routerLink]="['/gameDetails',game.id]">
+        <div class="game shadow">
+            <img class="w-100" src={{game.thumbnail}} alt={{game.title}}>
+            <div class="d-flex justify-content-between align-items-center p-3">
+                <h4 class="text-truncate">{{game.title}}</h4>
+                <span class="badge py-2 px-2">FREE</span>
+            </div>
+        </div>
+    </div>
+</div>
+</div>
+</section>

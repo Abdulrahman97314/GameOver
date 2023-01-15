@@ -1,0 +1,29 @@
+.c1{
+    color: #6c757d;
+    font-size: .875em;
+}
+.c2{
+    color: rgb(108, 117, 125);
+}
+.bg{
+    background-color: #33383e;
+}
+h1{
+    font-size: 1.5rem;
+}
+hr{
+    margin: 1rem 0;
+    border: 0;
+    border-top: 1px solid;
+    opacity: .25;
+}
+.noHover{
+    color: #4799eb;
+    text-decoration: none;
+    transition: none;
+    font-size: 14px;
+}
+.bg-img{
+    background-image: url(../../assets/imgs/gaming.ebaf2ffc84f4451d.jpg);
+    background-size: 100% 100%;
+}

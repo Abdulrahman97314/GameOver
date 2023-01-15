@@ -1,0 +1,32 @@
+<div *ngIf="loading" class="position-fixed w-100 h-100 bg loading d-flex justify-content-center align-items-center">    <div><i class="fa-regular fa-circle a me-2"></i> </div>
+<div class="s me-2"><i class="bi bi-triangle-fill"></i></div>
+<div><i class="fa-regular fa-square-full b me-2"></i></div>
+<div><i class="fa-solid fa-diamond n me-2"></i></div>
+</div>
+<section class="py-5 px-3">
+    <div class="container">
+        <div class="row gy-1 gx-4">
+            <div *ngFor="let game of GamesSortedBy.slice(0,getmore)" class="col-md-3 mb-4" [routerLink]="['/gameDetails',game.id]">
+                <div class="game shadow">
+                    <img class="w-100" src={{game.thumbnail}} alt={{game.title}}>
+                    <div class="p-3">
+                        <div class="d-flex justify-content-between align-items-center">
+                            <h4 class="text-truncate">{{game.title}}</h4>
+                            <span class="badge badgeFree p-2">FREE</span>
+                        </div>
+                        <p class="text-truncate text-muted ">{{game.short_description.slice(0,25)}}...</p>
+                        <div class="d-flex justify-content-between align-items-center">
+                            <i class="fas fa-plus-square"></i>
+                            <div class="d-flex justify-content-between align-items-center">
+                                <span class="badge gameType text-dark me-2">{{game.genre}}</span>
+                                <i [innerHTML]="game.platform|platform"></i>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <button *ngIf="this.max > this.getmore" (click)="getMoreGames()"
+                class="btn py-2 btn-Browse text-muted m-auto">More Games <i class="fas fa-angle-right"></i></button>
+        </div>
+    </div>
+</section>

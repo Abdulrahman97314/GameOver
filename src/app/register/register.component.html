@@ -1,0 +1,73 @@
+<section class="py-lg-5 px-lg-4">
+    <div class="container">
+    <div class="row g-0 shadow-lg">
+        <div class="col-lg-6">
+            <div class="bg-img h-100 w-100 d-none d-lg-block">
+            </div>
+        </div>
+        <div class="col-lg-6 py-5 px-3 bg">
+            <form class="" [formGroup]='registerForm'>
+                <h1 class="mb-4 text-center">Create My Account!</h1>
+                <div class="row">
+                <div class="col-sm-6">
+                    <div class="mb-3">
+                        <input formControlName='first_name' class="form-control" type="text" placeholder="First Name">
+                        <div>
+                            <p class="alert alert-dark p-1 text-center" *ngIf="registerForm.get('first_name')?.getError('required')&&errorMsg==true">First Name is required</p>
+                            <p class="alert alert-dark p-1 text-center" *ngIf="registerForm.get('first_name')?.getError('minlength')&&errorMsg==true">First Name Min length is 3</p>
+                            <p class="alert alert-dark p-1 text-center" *ngIf="registerForm.get('first_name')?.getError('maxlength')&&errorMsg==true">First Name max length is 20</p>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-sm-6">
+                    <div class="mb-3">
+                        <input formControlName='last_name' class="form-control" type="text" placeholder="Last Name">
+                        <div>
+                            <p class="alert alert-dark p-1 text-center" *ngIf="registerForm.get('last_name')?.getError('required')&&errorMsg==true">Last Name is required</p>
+                            <p class="alert alert-dark p-1 text-center" *ngIf="registerForm.get('last_name')?.getError('minlength')&&errorMsg==true">Last Name Min length is 3</p>
+                            <p class="alert alert-dark p-1 text-center" *ngIf="registerForm.get('last_name')?.getError('maxlength')&&errorMsg==true">Last Name max length is 20</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="mb-3">
+                <input formControlName='email' class="form-control" type="email" placeholder="Email Address">
+                <div>
+                    <p class="alert alert-dark p-1 text-center" *ngIf="registerForm.get('email')?.getError('required')&&errorMsg==true">Email is required</p>
+                    <p class="alert alert-dark p-1 text-center" *ngIf="registerForm.get('email')?.getError('email')&&errorMsg==true">Please Enter a valid email</p>                </div>
+            </div>
+            <div class="mb-3">
+                <input formControlName='age' class="form-control" type="number" placeholder="Age">
+                <div>
+                    <p class="alert alert-dark p-1 text-center" *ngIf="registerForm.get('age')?.getError('required')&&errorMsg==true">age is required</p>
+                    <p class="alert alert-dark p-1 text-center" *ngIf="registerForm.get('age')?.getError('min')&&errorMsg==true">Min Age is 18</p>
+                    <p class="alert alert-dark p-1 text-center" *ngIf="registerForm.get('age')?.getError('max')&&errorMsg==true">Max Age is 100</p>
+            </div>
+            </div>
+            <div class="mb-3">
+                <input formControlName='password' class="form-control" type="password" placeholder="Password">
+                <div>
+                    <p class="alert alert-dark p-1 text-center" *ngIf="registerForm.get('password')?.getError('required')&&errorMsg==true">Password is required</p>
+                    <p class="alert alert-dark p-1 text-center" *ngIf="registerForm.get('password')?.getError('minlength')&&errorMsg==true">Password Min length is 8</p>
+                    <p class="alert alert-dark p-1 text-center" *ngIf="registerForm.get('password')?.getError('maxlength')&&errorMsg==true">Password Max length is 30</p>
+            </div>
+            </div>
+            <button (click)="sendData()" type="submit" class="w-100 p-2 rounded">
+                <span *ngIf="loading==false">Create Account</span>
+                <span *ngIf="loading==true"><i class="fa fa-spinner fa-spin"></i></span>
+            </button>
+            <p class="text-center alert p-2 my-2 alert-dark" *ngIf="apiMsg">{{apiMsg}}</p>
+            <div class="text-center c1 pt-2">This site is protected by reCAPTCHA and the Google 
+                <a class="c2" href="https://policies.google.com/privacy">Privacy Policy</a>
+                 and <a class="c2" href="https://policies.google.com/terms">Terms of Service</a> apply.
+                </div>
+            </form>
+            <hr class="px-2">
+            <div class="text-center">
+                <span class="small">Already a member?</span>
+                <a routerLink="/login" class="ms-2 noHover">Log In<i class="fas fa-chevron-right small"></i></a>
+            </div>
+        </div>
+    </div>
+</div>
+</section>
